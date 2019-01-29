@@ -665,8 +665,9 @@ export default function sortableContainer(
               // then move it to the right
               translate.x = this.width + this.marginOffset.x;
               if (
+                nextNode &&
                 edgeOffset.left + translate.x >
-                this.containerBoundingRect.width - offset.width
+                  this.containerBoundingRect.width - offset.width
               ) {
                 // If it moves passed the right bounds, then animate it to the first position of the next row.
                 // We just use the offset of the next node to calculate where to move, because that node's original position
@@ -690,8 +691,9 @@ export default function sortableContainer(
               // then move it to the left
               translate.x = -(this.width + this.marginOffset.x);
               if (
+                prevNode &&
                 edgeOffset.left + translate.x <
-                this.containerBoundingRect.left + offset.width
+                  this.containerBoundingRect.left + offset.width
               ) {
                 // If it moves passed the left bounds, then animate it to the last position of the previous row.
                 // We just use the offset of the previous node to calculate where to move, because that node's original position
